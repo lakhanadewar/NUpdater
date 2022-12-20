@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginHome {
+public class LogHome {
 
 	// Author Lakhan Adewar
 	// QA Engineer
@@ -21,13 +21,13 @@ public class LoginHome {
 	@FindBy(xpath = "(//div[@class='drawer-wrapper ']//form//button)[1]")
 	private WebElement LoginBtn;
 
-	public LoginHome(WebDriver driver) {
+	public LogHome(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
 
 	}
 
-	public void clickLoginOnHome() {
+	public  void clickLoginOnHome() {
 		HeaderLoginBtn.click();
 	}
 	

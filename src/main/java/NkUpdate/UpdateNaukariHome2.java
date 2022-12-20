@@ -1,7 +1,6 @@
 package NkUpdate;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -40,14 +39,15 @@ public class UpdateNaukariHome2 {
 
 	public void ClickUpdateResumeHeadline(String UpdateWhat) {
 
-		List<WebElement> ss = quickLink4Update.stream().filter(s -> s.getText().equals(UpdateWhat))
-				.collect(Collectors.toList());
+		for (int i = 0; i < quickLink4Update.size(); i++) {
 
-		for (WebElement x : ss) {
-
-			x.click();
-			break;
+			String x = quickLink4Update.get(i).getText();
+			if (x.equals(UpdateWhat)) {
+				quickLink4Update.get(i).click();
+				break;
+			}
 		}
+
 	}
 
 	public void clickonResumeHeadEditButton(WebDriverWait wait) throws InterruptedException {
@@ -70,11 +70,10 @@ public class UpdateNaukariHome2 {
 
 	}
 
-	public void EditFinalUpdateResumeheading(WebDriverWait wait) throws InterruptedException {
+	public void EditFinalUpdateResumeheading(WebDriverWait wait) {
 
+		wait.until(ExpectedConditions.visibilityOf(successMsgBox));
 		// this will click on edit button again of resume headline
-		wait.until(ExpectedConditions.invisibilityOf(successMsgBox));
-
 		ResumeHeadEditBtn.click();
 
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
