@@ -3,6 +3,9 @@ package TestLogin;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -37,8 +40,18 @@ public class Login2Naukari extends InvokeBrowser {
 		UpProfile.clickOnUpdateProfile();
 		UpProfile2.ClickUpdateResumeHeadline("Resume Headline");
 		UpProfile2.clickonResumeHeadEditButton(wait);
+
 		UpProfile2.EditFinalUpdateResumeheading(wait);
-		
+
+	}
+
+	@AfterMethod
+	public void logout(ITestResult result) throws InterruptedException, IOException {
+		if (result.getStatus() == result.FAILURE) {
+
+			UtilityData.captureScreenShot(driver);
+		}
+
 	}
 
 }

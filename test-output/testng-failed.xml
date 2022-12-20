@@ -6,6 +6,7 @@
       <class name="TestLogin.Login2Naukari">
         <methods>
           <include name="Login2app"/>
+          <include name="logout"/>
           <include name="Login2App"/>
         </methods>
       </class> <!-- TestLogin.Login2Naukari -->
