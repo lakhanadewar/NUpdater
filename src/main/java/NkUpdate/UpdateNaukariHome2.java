@@ -28,7 +28,7 @@ public class UpdateNaukariHome2 {
 	private WebElement successMsgBox;
 	Actions act;
 	JavascriptExecutor js;
-	String ResumeHeadLine;
+	
 
 	public UpdateNaukariHome2(WebDriver driver) {
 
@@ -55,10 +55,7 @@ public class UpdateNaukariHome2 {
 		// this will click on edit button of resume headline
 		ResumeHeadEditBtn.click();
 		// wait.until(ExpectedConditions.visibilityOf(layerofPopUp));
-		// this extract the test from the text box
-		ResumeHeadLine = ResumeHeadLineText.getText();
-		// System.out.println(ResumeHeadLine);
-
+		
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
 				.keyUp(Keys.CONTROL).sendKeys("hello hi update this resume heading").build().perform();
 
@@ -70,14 +67,14 @@ public class UpdateNaukariHome2 {
 
 	}
 
-	public void EditFinalUpdateResumeheading(WebDriverWait wait) {
+	public void EditFinalUpdateResumeheading(WebDriverWait wait, String resumeHeadline) {
 
 		wait.until(ExpectedConditions.visibilityOf(successMsgBox));
 		// this will click on edit button again of resume headline
 		ResumeHeadEditBtn.click();
 
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
-				.keyUp(Keys.CONTROL).sendKeys(ResumeHeadLine).build().perform();
+				.keyUp(Keys.CONTROL).sendKeys(resumeHeadline).build().perform();
 
 		// act.moveToElement(ResumeHeadLineText).click().sendKeys(Keys.DELETE,
 		// Keys.DELETE, Keys.DELETE).build().perform();
@@ -86,5 +83,10 @@ public class UpdateNaukariHome2 {
 		saveBtn.click();
 
 	}
+	
+	
+	
+	
+	
 
 }

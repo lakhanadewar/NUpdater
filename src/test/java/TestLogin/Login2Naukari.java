@@ -13,6 +13,7 @@ import NkBase.InvokeBrowser;
 import NkLogin.LogHome;
 import NkUpdate.UpdateNaukariHome1;
 import NkUpdate.UpdateNaukariHome2;
+import NkUpdate.UploadResume;
 import NkUtility.UtilityData;
 
 public class Login2Naukari extends InvokeBrowser {
@@ -20,6 +21,7 @@ public class Login2Naukari extends InvokeBrowser {
 	LogHome LoginHome;
 	UpdateNaukariHome1 UpProfile;
 	UpdateNaukariHome2 UpProfile2;
+	UploadResume uploadRusm;
 
 	@BeforeClass
 	public void Login2App() {
@@ -29,6 +31,7 @@ public class Login2Naukari extends InvokeBrowser {
 		LoginHome = new NkLogin.LogHome(driver);
 		UpProfile = new UpdateNaukariHome1(driver);
 		UpProfile2 = new UpdateNaukariHome2(driver);
+		uploadRusm = new UploadResume(driver);
 	}
 
 	@Test
@@ -40,7 +43,11 @@ public class Login2Naukari extends InvokeBrowser {
 		UpProfile.clickOnUpdateProfile();
 		UpProfile2.ClickUpdateResumeHeadline("Resume Headline");
 		UpProfile2.clickonResumeHeadEditButton(wait);
-		UpProfile2.EditFinalUpdateResumeheading(wait);
+		UpProfile2.EditFinalUpdateResumeheading(wait, UtilityData.getExceldata(0, 2));
+		// this upload resume to profile
+		uploadRusm.deleteResume(wait);
+		String resumepath = "C:\\Users\\lakha\\Downloads\\03Wed\\JobsWed\\Bangalorewed\\LSAExpleo.pdf";
+		uploadRusm.uploadresume(wait, resumepath);
 
 	}
 
