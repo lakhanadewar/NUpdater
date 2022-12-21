@@ -1,4 +1,5 @@
 NkBase\InvokeBrowser.class
+NkUpdate\UploadResume.class
 NkLogin\LogHome.class
 NkUpdate\UpdateNaukariHome1.class
 NkUpdate\UpdateNaukariHome2.class

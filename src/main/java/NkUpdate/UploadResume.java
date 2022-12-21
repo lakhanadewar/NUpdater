@@ -38,7 +38,7 @@ public class UploadResume {
 	public void uploadresume(WebDriverWait wait, String pathResume) {
 
 		wait.until(ExpectedConditions.visibilityOf(confirmMsgBox));
-
+		wait.until(ExpectedConditions.invisibilityOf(attachResumeBtn));
 		attachResumeBtn.sendKeys(pathResume);
 
 	}
