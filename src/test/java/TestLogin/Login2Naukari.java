@@ -46,7 +46,7 @@ public class Login2Naukari extends InvokeBrowser {
 		UpProfile2.EditFinalUpdateResumeheading(wait, UtilityData.getExceldata(0, 2));
 		// this upload resume to profile
 		uploadRusm.deleteResume(wait);
-		String resumepath = "C:\\Users\\lakha\\Documents\\Lakhan Adewar\\00 Desktop Data 2021\\Pictures\\05Friday05\\Fri05\\05FridayBangalore\\Lakhan_Expleo_Resume.pdf";
+		String resumepath = "C:\\Users\\lakha\\Documents\\Lakhan Adewar\\00 Desktop Data 2021\\Pictures\\05Friday05\\Fri05\\05FridayBangalore\\Lakhan_Expleo_Resume_new.pdf";
 		uploadRusm.uploadresume(wait, resumepath);
 
 	}
