@@ -41,11 +41,16 @@ public class Login2Naukari extends InvokeBrowser {
 		LoginHome.LoginNaukari(UtilityData.getExceldata(0, 0), UtilityData.getExceldata(0, 1));
 
 		UpProfile.clickOnUpdateProfile();
+
 		UpProfile2.ClickUpdateResumeHeadline("Resume Headline");
+
 		UpProfile2.clickonResumeHeadEditButton(wait);
+
 		UpProfile2.EditFinalUpdateResumeheading(wait, UtilityData.getExceldata(0, 2));
+
 		// this upload resume to profile
 		uploadRusm.deleteResume(wait);
+
 		String resumepath = "C:\\Users\\lakha\\Documents\\Lakhan Adewar\\00 Desktop Data 2021\\Pictures\\05Friday05\\Fri05\\05FridayBangalore\\Lakhan_Expleo_Resume_new.pdf";
 		uploadRusm.uploadresume(wait, resumepath);
 
@@ -53,7 +58,7 @@ public class Login2Naukari extends InvokeBrowser {
 
 	@AfterMethod
 	public void logout(ITestResult result) throws InterruptedException, IOException {
-		if (result.getStatus() == result.FAILURE) {
+		if (result.getStatus() == ITestResult.FAILURE) {
 
 			UtilityData.captureScreenShot(driver);
 		}

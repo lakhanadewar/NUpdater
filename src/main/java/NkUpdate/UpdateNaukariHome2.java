@@ -54,6 +54,7 @@ public class UpdateNaukariHome2 {
 
 		// this will click on edit button of resume headline
 		ResumeHeadEditBtn.click();
+		Thread.sleep(1500);
 		// wait.until(ExpectedConditions.visibilityOf(layerofPopUp));
 		
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
@@ -61,24 +62,24 @@ public class UpdateNaukariHome2 {
 
 		// act.moveToElement(ResumeHeadLineText).click().sendKeys(Keys.DELETE,
 		// Keys.DELETE, Keys.DELETE).build().perform();
-
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(saveBtn));
 		saveBtn.click();
 
 	}
 
-	public void EditFinalUpdateResumeheading(WebDriverWait wait, String resumeHeadline) {
+	public void EditFinalUpdateResumeheading(WebDriverWait wait, String resumeHeadline) throws InterruptedException {
 
 		wait.until(ExpectedConditions.visibilityOf(successMsgBox));
 		// this will click on edit button again of resume headline
 		ResumeHeadEditBtn.click();
-
+		Thread.sleep(1500);
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
 				.keyUp(Keys.CONTROL).sendKeys(resumeHeadline).build().perform();
 
 		// act.moveToElement(ResumeHeadLineText).click().sendKeys(Keys.DELETE,
 		// Keys.DELETE, Keys.DELETE).build().perform();
-
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOf(saveBtn));
 		saveBtn.click();
 
