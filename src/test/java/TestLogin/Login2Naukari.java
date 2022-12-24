@@ -50,8 +50,10 @@ public class Login2Naukari extends InvokeBrowser {
 
 		// this upload resume to profile
 		uploadRusm.deleteResume(wait);
+		
+		uploadRusm.getClass();
 
-		String resumepath = "C:\\Users\\lakha\\Videos\\06Sat\\06SatNew\\Sat062022Banglor\\Resume_Lakhan.pdf";
+		String resumepath = "C:\\SoftwareTesting\\07Sunday\\Sundaylast\\SundayLastBangalore\\Resume_Lakhan_Expleo.pdf";
 		uploadRusm.uploadresume(wait, resumepath);
 
 	}
