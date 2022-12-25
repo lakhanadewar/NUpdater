@@ -15,6 +15,7 @@ import NkUpdate.UpdateNaukariHome1;
 import NkUpdate.UpdateNaukariHome2;
 import NkUpdate.UploadResume;
 import NkUtility.UtilityData;
+import Nklogout.NkLogout;
 
 public class Login2Naukari extends InvokeBrowser {
 
@@ -22,6 +23,7 @@ public class Login2Naukari extends InvokeBrowser {
 	UpdateNaukariHome1 UpProfile;
 	UpdateNaukariHome2 UpProfile2;
 	UploadResume uploadRusm;
+	NkLogout logout;
 
 	@BeforeClass
 	public void Login2App() {
@@ -32,6 +34,7 @@ public class Login2Naukari extends InvokeBrowser {
 		UpProfile = new UpdateNaukariHome1(driver);
 		UpProfile2 = new UpdateNaukariHome2(driver);
 		uploadRusm = new UploadResume(driver);
+		logout = new NkLogout(driver);
 	}
 
 	@Test
@@ -50,7 +53,7 @@ public class Login2Naukari extends InvokeBrowser {
 
 		// this upload resume to profile
 		uploadRusm.deleteResume(wait);
-		
+
 		uploadRusm.getClass();
 
 		String resumepath = "C:\\SoftwareTesting\\07Sunday\\Sundaylast\\SundayLastBangalore\\Resume_Lakhan_Expleo.pdf";
@@ -65,14 +68,16 @@ public class Login2Naukari extends InvokeBrowser {
 			UtilityData.captureScreenShot(driver);
 		}
 
+		logout.clickLogout();
+
 	}
 
 	@AfterClass
 	public void ClearAll() {
 
-		LoginHome = null;
-		UpProfile = null;
-		UpProfile2 = null;
+		// LoginHome = null;
+		// UpProfile = null;
+		// UpProfile2 = null;
 
 	}
 
