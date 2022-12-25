@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class UpdateNaukariHome1 {
 
-	@FindBy(css = "div[class='updateProfile'] div[class='mb10'] div")
+	@FindBy(xpath = "//div[@class='updateProfile']/div[@class='mb10']/div")
 	private WebElement updateBtn;
 
 	public UpdateNaukariHome1(WebDriver driver) {
@@ -17,7 +17,7 @@ public class UpdateNaukariHome1 {
 
 	public void clickOnUpdateProfile() throws InterruptedException {
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		updateBtn.click();
 
 	}
