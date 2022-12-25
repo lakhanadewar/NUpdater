@@ -75,9 +75,10 @@ public class Login2Naukari extends InvokeBrowser {
 	@AfterClass
 	public void ClearAll() {
 
-		// LoginHome = null;
-		// UpProfile = null;
-		// UpProfile2 = null;
+		LoginHome = null;
+		UpProfile = null;
+		UpProfile2 = null;
+		logout = null;
 
 	}
 

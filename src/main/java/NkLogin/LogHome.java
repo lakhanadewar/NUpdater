@@ -32,10 +32,11 @@ public class LogHome {
 	}
 	
 	
-	public void LoginNaukari(String uName,String uPass) {
+	public void LoginNaukari(String uName,String uPass) throws InterruptedException {
 		
 		userName.sendKeys(uName);
 		userPass.sendKeys(uPass);
+		Thread.sleep(1000);
 		LoginBtn.click();
 		
 		
