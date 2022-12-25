@@ -23,7 +23,7 @@ public class Login2Naukari extends InvokeBrowser {
 	UpdateNaukariHome1 UpProfile;
 	UpdateNaukariHome2 UpProfile2;
 	UploadResume uploadRusm;
-	NkLogout logout;
+	
 
 	@BeforeClass
 	public void Login2App() {
@@ -34,7 +34,7 @@ public class Login2Naukari extends InvokeBrowser {
 		UpProfile = new UpdateNaukariHome1(driver);
 		UpProfile2 = new UpdateNaukariHome2(driver);
 		uploadRusm = new UploadResume(driver);
-		logout = new NkLogout(driver);
+		
 	}
 
 	@Test
@@ -68,7 +68,7 @@ public class Login2Naukari extends InvokeBrowser {
 			UtilityData.captureScreenShot(driver);
 		}
 
-		logout.clickLogout();
+		
 
 	}
 
@@ -78,7 +78,7 @@ public class Login2Naukari extends InvokeBrowser {
 		LoginHome = null;
 		UpProfile = null;
 		UpProfile2 = null;
-		logout = null;
+		
 
 	}
 
