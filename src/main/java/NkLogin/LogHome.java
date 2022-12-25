@@ -9,9 +9,7 @@ public class LogHome {
 
 	// Author Lakhan Adewar
 	// QA Engineer
-	
-	
-	
+
 	@FindBy(xpath = "//div[@class='nI-gNb-header__wrapper']/div/a[@id='login_Layer']")
 	private WebElement HeaderLoginBtn;
 	@FindBy(xpath = "(//div[@class='drawer-wrapper ']//form/div/input)[1]")
@@ -27,24 +25,19 @@ public class LogHome {
 
 	}
 
-	public  void clickLoginOnHome() {
+	public void clickLoginOnHome() {
 		HeaderLoginBtn.click();
 	}
-	
-	
-	public void LoginNaukari(String uName,String uPass) throws InterruptedException {
-		
+
+	public void LoginNaukari(String uName, String uPass) throws InterruptedException {
+
 		userName.sendKeys(uName);
 		userPass.sendKeys(uPass);
 		Thread.sleep(1000);
 		LoginBtn.click();
-		
-		
-		
+		Thread.sleep(1000);
+		LoginBtn.click();
+
 	}
-	
-	
-	
-	
-	
+
 }
