@@ -18,6 +18,8 @@ public class LogHome {
 	private WebElement userPass;
 	@FindBy(xpath = "(//div[@class='drawer-wrapper ']//form//button)[1]")
 	private WebElement LoginBtn;
+	@FindBy(xpath = "//form[@name='login-form']/div[@class='server-err']")
+	private WebElement errorMsg;
 
 	public LogHome(WebDriver driver) {
 
@@ -32,11 +34,12 @@ public class LogHome {
 	public void LoginNaukari(String uName, String uPass) throws InterruptedException {
 
 		userName.sendKeys(uName);
+		Thread.sleep(1000);
 		userPass.sendKeys(uPass);
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		LoginBtn.click();
-		Thread.sleep(1000);
-		LoginBtn.click();
+		
+		
 
 	}
 
