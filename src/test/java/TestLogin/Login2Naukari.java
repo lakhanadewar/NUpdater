@@ -23,7 +23,6 @@ public class Login2Naukari extends InvokeBrowser {
 	UpdateNaukariHome1 UpProfile;
 	UpdateNaukariHome2 UpProfile2;
 	UploadResume uploadRusm;
-	
 
 	@BeforeClass
 	public void Login2App() {
@@ -34,7 +33,7 @@ public class Login2Naukari extends InvokeBrowser {
 		UpProfile = new UpdateNaukariHome1(driver);
 		UpProfile2 = new UpdateNaukariHome2(driver);
 		uploadRusm = new UploadResume(driver);
-		
+
 	}
 
 	@Test
@@ -51,13 +50,10 @@ public class Login2Naukari extends InvokeBrowser {
 
 		UpProfile2.EditFinalUpdateResumeheading(wait, UtilityData.getExceldata(0, 2));
 
-		// this upload resume to profile
-		uploadRusm.deleteResume(wait);
-
-		uploadRusm.getClass();
-
 		String resumepath = "C:\\Users\\lakha\\Downloads\\03Wed\\JobsWed\\Bangalorewed\\Resume Lakhan Expleo.pdf";
-		uploadRusm.uploadresume(wait, resumepath);
+
+		// this upload resume to profile
+		uploadRusm.updateResume(wait, resumepath);
 
 	}
 
@@ -68,8 +64,6 @@ public class Login2Naukari extends InvokeBrowser {
 			UtilityData.captureScreenShot(driver);
 		}
 
-		
-
 	}
 
 	@AfterClass
@@ -78,7 +72,6 @@ public class Login2Naukari extends InvokeBrowser {
 		LoginHome = null;
 		UpProfile = null;
 		UpProfile2 = null;
-		
 
 	}
 
