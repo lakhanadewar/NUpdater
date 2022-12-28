@@ -44,16 +44,16 @@ public class Login2Naukari extends InvokeBrowser {
 
 		UpProfile.clickOnUpdateProfile();
 
+		String resumepath = "C:\\Users\\lakha\\Downloads\\03Wed\\JobsWed\\Bangalorewed\\Resume Lakhan Expleo.pdf";
+
+		// this upload resume to profile
+		uploadRusm.updateResume(wait, resumepath);
+
 		UpProfile2.ClickUpdateResumeHeadline("Resume Headline");
 
 		UpProfile2.clickonResumeHeadEditButton(wait);
 
 		UpProfile2.EditFinalUpdateResumeheading(wait, UtilityData.getExceldata(0, 2));
-
-		String resumepath = "C:\\Users\\lakha\\Downloads\\03Wed\\JobsWed\\Bangalorewed\\Resume Lakhan Expleo.pdf";
-
-		// this upload resume to profile
-		uploadRusm.updateResume(wait, resumepath);
 
 	}
 
