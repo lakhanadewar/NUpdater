@@ -44,7 +44,7 @@ public class Login2Naukari extends InvokeBrowser {
 
 		UpProfile.clickOnUpdateProfile();
 
-		String resumepath = "C:\\Users\\lakha\\Downloads\\03Wed\\JobsWed\\Bangalorewed\\Resume Lakhan Expleo.pdf";
+		String resumepath = "C:\\Users\\lakha\\Documents\\Lakhan Adewar\\00 Desktop Data 2021\\Pictures\\05Friday05\\Fri05\\05FridayBangalore\\Lakhan_Expleo_Resume_new.pdf";
 
 		// this upload resume to profile
 		uploadRusm.updateResume(wait, resumepath);

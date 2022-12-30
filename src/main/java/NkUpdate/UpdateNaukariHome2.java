@@ -28,7 +28,6 @@ public class UpdateNaukariHome2 {
 	private WebElement successMsgBox;
 	Actions act;
 	JavascriptExecutor js;
-	
 
 	public UpdateNaukariHome2(WebDriver driver) {
 
@@ -37,11 +36,12 @@ public class UpdateNaukariHome2 {
 		js = ((JavascriptExecutor) driver);
 	}
 
-	public void ClickUpdateResumeHeadline(String UpdateWhat) {
-
+	public void ClickUpdateResumeHeadline(String UpdateWhat) throws InterruptedException {
+		Thread.sleep(2000);
 		for (int i = 0; i < quickLink4Update.size(); i++) {
 
 			String x = quickLink4Update.get(i).getText();
+			Thread.sleep(500);
 			if (x.equals(UpdateWhat)) {
 				quickLink4Update.get(i).click();
 				break;
@@ -55,8 +55,8 @@ public class UpdateNaukariHome2 {
 		// this will click on edit button of resume headline
 		ResumeHeadEditBtn.click();
 		Thread.sleep(1500);
-		// wait.until(ExpectedConditions.visibilityOf(layerofPopUp));
-		
+		wait.until(ExpectedConditions.visibilityOf(layerofPopUp));
+
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
 				.keyUp(Keys.CONTROL).sendKeys("hello hi update this resume heading").build().perform();
 
@@ -84,10 +84,5 @@ public class UpdateNaukariHome2 {
 		saveBtn.click();
 
 	}
-	
-	
-	
-	
-	
 
 }
