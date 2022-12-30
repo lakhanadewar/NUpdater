@@ -50,7 +50,7 @@ public class UpdateNaukariHome2 {
 
 	}
 
-	public void clickonResumeHeadEditButton(WebDriverWait wait) throws InterruptedException {
+	public void clickonResumeHeadEditButton(WebDriverWait wait,String msgOne) throws InterruptedException {
 
 		// this will click on edit button of resume headline
 		ResumeHeadEditBtn.click();
@@ -58,7 +58,7 @@ public class UpdateNaukariHome2 {
 		wait.until(ExpectedConditions.visibilityOf(layerofPopUp));
 
 		act.moveToElement(ResumeHeadLineText).click().keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE)
-				.keyUp(Keys.CONTROL).sendKeys("hello hi update this resume heading").build().perform();
+				.keyUp(Keys.CONTROL).sendKeys(msgOne).build().perform();
 
 		// act.moveToElement(ResumeHeadLineText).click().sendKeys(Keys.DELETE,
 		// Keys.DELETE, Keys.DELETE).build().perform();

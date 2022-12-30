@@ -51,7 +51,7 @@ public class Login2Naukari extends InvokeBrowser {
 
 		UpProfile2.ClickUpdateResumeHeadline("Resume Headline");
 
-		UpProfile2.clickonResumeHeadEditButton(wait);
+		UpProfile2.clickonResumeHeadEditButton(wait,UtilityData.getExceldata(0, 2));
 
 		UpProfile2.EditFinalUpdateResumeheading(wait, UtilityData.getExceldata(0, 2));
 
