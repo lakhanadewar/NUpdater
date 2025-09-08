@@ -24,7 +24,7 @@ public class UpdateNaukariHome2 {
 	private WebElement ResumeHeadLineText;
 	@FindBy(xpath = "//form[@name='resumeHeadlineForm']//button")
 	private WebElement saveBtn;
-	@FindBy(xpath = "//div[@id='lazyResumeHead']//div[@class='msgBox success']")
+	@FindBy(xpath = "//div[@class='msgBox success ']")
 	private WebElement successMsgBox;
 	Actions act;
 	JavascriptExecutor js;

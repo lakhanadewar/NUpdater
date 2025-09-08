@@ -19,7 +19,7 @@ public class UtilityData {
 	public static String getExceldata(int rowNum, int cellNum) throws EncryptedDocumentException, IOException {
 
 		FileInputStream file = new FileInputStream(
-				"C:\\Users\\lakha\\eclipse\\Fresh-eclipse-workspace\\Naukari\\TestData\\NaukariLoginDetails.xlsx");
+				"C:\\Users\\lakha\\eclipse-workspace\\NaukariUpdater\\TestData\\NaukariLoginDetails.xlsx");
 
 		Sheet sh = WorkbookFactory.create(file).getSheet("naukaridata");
 
@@ -31,7 +31,7 @@ public class UtilityData {
 	public static void captureScreenShot(WebDriver driver) throws IOException {
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File destination = new File(
-				"C:\\Users\\lakha\\eclipse\\Fresh-eclipse-workspace\\Naukari\\Screenshots\\Screenshot_"
+				"C:\\Users\\lakha\\eclipse-workspace\\NaukariUpdater\\Screenshots\\Screenshot_"
 						+ RandomString.make() + ".jpg");
 		FileHandler.copy(source, destination);
 
